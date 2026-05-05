@@ -1,0 +1,31 @@
+{
+  "event_schema": {
+    "version": "1.0",
+    "description": "Deterministic event model for Sextant Resilience Simulation Framework"
+  },
+
+  "event": {
+    "event_id": "string",
+    "timestamp": "ISO-8601",
+    "source_layer": "CASCADE | RESPONSE | SATELLITE",
+    "event_type": "STATE_UPDATE | FAILURE | ESCALATION | RECOVERY",
+
+    "system_state": {
+      "latency": "integer",
+      "node_failure_count": "integer",
+      "network_status": "STABLE | DEGRADED | CRITICAL"
+    },
+
+    "decision_output": "MONITOR | ESCALATE | FAILOVER | NONE",
+
+    "execution_state": "NORMAL_OPERATION | DEGRADED_OPERATION | RECOVERY_MODE",
+
+    "communication_state": "TERRESTRIAL | HIGH_LATENCY_LINK | SATELLITE_MODE"
+  },
+
+  "rules": {
+    "determinism": "Identical input state must always produce identical output event chain",
+    "isolation": "Cascade, Response, and Satellite layers must not directly modify each other",
+    "flow": "CASCADE → RESPONSE → SATELLITE → OUTPUT"
+  }
+}
