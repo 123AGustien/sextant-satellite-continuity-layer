@@ -1,6 +1,19 @@
 # Sextant Satellite Continuity Layer  
 ## Non-Terrestrial Communication & Continuity Simulation Engine
-
+A. Separation of Concerns
+Layer
+Responsibility
+Clean separation
+Cascade
+Decision logic
+✅ Yes
+Response
+Execution logic
+✅ Yes
+Satellite
+Communication constraints
+✅ Yes
+✔ PASS — strong modular separation
 ---
 
 ## 1. Purpose
