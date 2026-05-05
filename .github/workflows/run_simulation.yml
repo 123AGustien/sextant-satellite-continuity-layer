@@ -1,0 +1,27 @@
+name: Sextant Simulation Test
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  run-simulation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Dependencies (if any)
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Run Deterministic Simulation Test
+        run: |
+          python simulation_test.py
