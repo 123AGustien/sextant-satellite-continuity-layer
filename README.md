@@ -104,3 +104,65 @@ Cascade Layer:
 
 ### Example Signal Flow
 Cascade Layer → FAILOVER SIGNAL → Independent Response Layer
+### Signal Definition Format
+
+Failover signals are structured, deterministic notifications that include:
+
+- System state snapshot (high-level health indicators)
+- Failure classification category
+- Timestamp of escalation decision
+- Activation directive for continuity execution layer
+
+This ensures the Independent Response Layer can operate without requiring re-evaluation of supervisory logic.
+
+---
+
+## 7. Auditability Principle
+
+All failover decisions are treated as immutable supervisory events once issued.
+
+This ensures:
+- Traceability of system decisions
+- Post-incident reconstruction capability
+- Separation of detection logic from execution outcomes
+
+---
+
+## 8. System Behaviour Model
+Primary Systems ] ↓ [ Cascade Supervisory Layer ] ↓ (anomaly detected) [ Escalation Decision State ] ↓ (failover signal issued) [ Independent Response Layer ] ↓ [ Continuity Execution Mode ]
+
+---
+
+## 9. Constraints
+
+This repository does NOT:
+- Execute fallback or recovery operations
+- Maintain service continuity directly
+- Operate independently without system context
+
+This repository DOES:
+- Detect system degradation
+- Evaluate failure conditions
+- Trigger structured escalation pathways
+- Coordinate with execution layer
+
+---
+
+## 10. Strategic Role in Sextant Architecture
+
+The Cascade Layer functions as the **supervisory intelligence layer** of the Sextant system.
+
+Its role is to ensure:
+- Early detection of systemic risk
+- Controlled escalation logic
+- Clean separation between decision and execution layers
+- High-confidence failover triggering under uncertainty
+
+---
+
+## 11. Future Extensions
+
+- Multi-region anomaly correlation engine
+- Predictive failure modeling
+- Event-driven escalation policies
+- Audit logging for supervisory decision chains
