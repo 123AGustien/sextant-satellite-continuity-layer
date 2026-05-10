@@ -1,4 +1,16 @@
-# Sextant Satellite Continuity Layer  
+# Repository Status Notice
+
+This repository is currently maintained as a frozen conceptual reference index.
+
+No active development, live deployment, production implementation, or operational SDV integration is currently being performed within this repository.
+
+The contents are preserved for:
+- conceptual architecture review
+- engineering discussion
+- deterministic observability research reference
+- future evaluation consideration
+
+All materials remain non-operational and conceptual in nature.ontinuitye Continuity Layer  
 ## Non-Terrestrial Communication & Continuity Simulation Engine
 A. Separation of Concerns
 Layer
